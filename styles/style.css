@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --dark-bg: #1B1924;
+    --white: #ffffff;
+    --input-bg: #444059;
+    --placeholder: #8F8F8F;
+    --btn: #28A9F1;
+    --btn-light: #28abf175;
+    --btn-medium-light: #28abf1b7;
+    --dark: #04131C;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    width: 370px;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 10px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--white);
+    text-align: center;
+}
+
+#offline {
+    display: none;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.hero-icon {
+    width: 90px;
+    margin: 20px 0;
+}
+
+.endorsement {
+    background-color: var(--white);
+}
+
+.endorsement h3 {
+    color: var(--dark);
+}
+
+.endorsement p {
+    color: var(--dark-bg);
+}
+
+input,
+textarea {
+    background-color: var(--input-bg);
+    resize: none;
+    color: var(--white);
+}
+
+input,
+textarea,
+#submit {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.inputs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+input {
+    flex-grow: 1;
+}
+
+#submit {
+    background-color: var(--btn);
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: 3px solid var(--dark-bg);
+}
+
+#submit:hover,
+#submit:focus {
+    outline: 3px solid var(--btn-light);
+}
+
+#submit:active {
+    outline: 3px solid var(--btn-medium-light);
+}
+
+.endorsement {
+    padding: 15px 10px;
+    background-color: var(--white);
+    text-align: left;
+    margin: 10px 0;
+}
+
+.endorsement h3 {
+    color: var(--dark);
+    font-size: 0.9rem;
+}
+
+.endorsement p {
+    color: var(--dark-bg);
+    font-size: 0.8rem;
+    margin: 10px 0;
+    line-height: 1.5;
+}

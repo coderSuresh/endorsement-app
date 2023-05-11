@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endorsement App</title>
+    <link rel="icon" href="./images/icon.svg">
+    <link rel="apple-touch-icon" href="./images/icon.svg">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="manifest" href="./site.webmanifest">
+    <script src="./js/app.js" type="module"></script>
+</head>
+
+<body>
+
+    <main>
+        <div id="offline">
+            <center>
+                <p>You are offline. Connect to the network to use this app.</p>
+            </center>
+        </div>
+        <img src="./images/icon.svg" alt="app icon" class="hero-icon">
+        <h1>We are the champions</h1>
+        <form action="#" id="form">
+            <textarea name="endorsement" id="endorsement" cols="30" rows="5" placeholder="Write your endorsement here"
+                required></textarea>
+            <div class="inputs">
+                <input type="text" placeholder="From" name="from" id="from" required>
+                <input type="text" placeholder="To" name="to" id="to" required>
+            </div>
+            <button id="submit">Publish</button>
+        </form>
+        <h2>- Endorsements -</h2>
+        <div id="endorsements">
+            <!-- endorsements will come from ./js/app.js -->
+        </div>
+    </main>
+
+</body>
+
+</html>
