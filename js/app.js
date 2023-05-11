@@ -1,4 +1,17 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+import { getDatabase, ref, onValue, push } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+
 if (navigator.onLine) {
+
+    const firebaseConfig = {
+        databaseURL: "https://endorsement-app-4f276-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    }
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    const dbRef = ref(database, "/endorsements");
+
     const msgInput = document.getElementById("endorsement");
     const fromInput = document.getElementById("from");
     const toInput = document.getElementById("to");
@@ -25,14 +38,25 @@ if (navigator.onLine) {
         };
 
         endorsements.push(endorsement);
+
+        push(dbRef, endorsement);
+
         localStorage.setItem("endorsements", JSON.stringify(endorsements));
 
         form.reset();
-
         renderEndorsements();
     }
 
-    renderEndorsements();
+    // Listen for new endorsements in the database
+    onValue(dbRef, (snapshot) => {
+        const data = Object.values(snapshot.val());
+
+        if (data && data.length > 0) {
+            renderEndorsements(data);
+        } else {
+            endorsementContainer.textContent = "No endorsements";
+        }
+    });
 
     function renderEndorsements() {
         if (endorsements && endorsements.length > 0) {
