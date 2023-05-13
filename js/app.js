@@ -84,7 +84,8 @@ if (endorsements.length) {
 function renderEndorsements(endorsements) {
     if (endorsements && endorsements.length > 0) {
         endorsementContainer.textContent = "";
-        endorsements.forEach(endorsement => {
+        for (let i = endorsements.length - 1; i >= 0; i--) {
+            const endorsement = endorsements[i];
             const endorsementDiv = document.createElement("div");
             endorsementDiv.classList.add("endorsement");
 
@@ -95,7 +96,7 @@ function renderEndorsements(endorsements) {
             `;
 
             endorsementContainer.appendChild(endorsementDiv);
-        });
+        }
     } else {
         endorsementContainer.textContent = "No endorsements";
     }
