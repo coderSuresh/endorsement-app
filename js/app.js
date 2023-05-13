@@ -38,12 +38,11 @@ function addEndorsement() {
         to: toInput.value
     };
 
-    endorsements.push(endorsement);
+    endorsements.unshift(endorsement);
 
     if (navigator.onLine) {
         push(dbRef, endorsement);
-    }
-    localStorage.setItem("endorsements", JSON.stringify(endorsements));
+    } else localStorage.setItem("endorsements", JSON.stringify(endorsements));
 
     form.reset();
     getEndorsements(endorsements);
